@@ -9,15 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["ben2c"]
   spec.email         = ["bencheng200@gmail.com"]
 
-  spec.summary       = %q{Summary}
-  spec.description   = %q{Description for now}
-  spec.homepage      = "http://www.hello.com"
+  spec.summary       = %q{Program will grab summoner's stats from U.GG}
+  spec.description   = %q{Description}
+  spec.homepage      = "http://www.randomwebsite.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "http://www.hello.com'"
+    spec.metadata['allowed_push_host'] = "http://www.randomwebsite.com"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.10"
+  spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "pry"
   spec.add_dependency "nokogiri"
