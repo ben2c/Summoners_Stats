@@ -5,8 +5,8 @@ require 'open-uri'
 require 'pry'
 
   def self.scrape(name)
-    summoner = "camiyoka"
-    site = "https://u.gg/lol/profile/na1/" +name+"/overview"
+    str_name = name.strip.to_s
+    site = "https://u.gg/lol/profile/na1/" +str_name+"/overview"
     unparsed_page = URI.open(site)
     parsed_page = Nokogiri::HTML(unparsed_page)
     page = parsed_page.css("div.summoner-profile_info_rank")
