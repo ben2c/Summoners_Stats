@@ -11,13 +11,15 @@ class SummonersStats::CLI
     if @name.length == 0
       get_name
     else
-      name
+      display_name
     end
   end
 
-  def name
+  def display_name
     puts "The following stats are for: "+ @name
   end
+
+  def player_data (@name)
 
 
 end
