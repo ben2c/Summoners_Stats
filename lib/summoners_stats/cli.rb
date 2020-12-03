@@ -21,7 +21,7 @@ class SummonersStats::CLI
   end
 
   def player_data
-    player_data = SummonersStats::Player_Name.name
+    puts SummonersStats::Player_Name.name
   end
 
 end
