@@ -4,7 +4,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-  def scraper
+  def self.scraper
     summoner = "camiyoka"
     site = "https://u.gg/lol/profile/na1/" +summoner+"/overview"
     unparsed_page = open(site)
@@ -20,8 +20,7 @@ require 'pry'
     ranked_flex_LP = parsed_page.css("div.summoner-profile_info_rank").text[61...65]
     ranked_flex_winrate = parsed_page.css("div.summoner-profile_info_rank").text[65...71]
     ranked_flex_num_games = parsed_page.css("div.summoner-profile_info_rank").text[71...79]
-    #binding.pry
+    binding.pry
   end
 
 end
-scraper

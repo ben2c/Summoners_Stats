@@ -13,13 +13,15 @@ class SummonersStats::CLI
     else
       display_name
     end
+    player_data
   end
 
   def display_name
     puts "The following stats are for: "+ @name
   end
 
-  def player_data (@name)
-
+  def player_data
+    player_data = SummonersStats::Player_Name.name
+  end
 
 end
