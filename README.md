@@ -6,12 +6,12 @@ Find out the stats of a summoner in League of Legends using this CLI application
 
 To test out this application, clone this repo and run:
 
-- <code>cd summoners_stats<code>
-- <code>bundle install<code>
+- <code>cd summoners_stats
+- <code>bundle install
 
 To start the CLI app:
 
-- <code>ruby bin/SumStats<code>
+- <code>ruby bin/SumStats
 
 ## Contributing
 
