@@ -9,7 +9,7 @@ require 'pry'
     site = "https://u.gg/lol/profile/na1/" +str_name+"/overview"
     unparsed_page = URI.open(site)
     parsed_page = Nokogiri::HTML(unparsed_page)
-    page = parsed_page.css("div.summoner-profile_info_rank")
+    page = parsed_page.css("div.summoner-profile_info_rank.large")
     stats = []
 
     page.each do |player|
