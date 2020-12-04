@@ -1,19 +1,19 @@
 class SummonersStats::Player
-  attr_reader :name
+  attr_accessor :name, :elo, :win_rate, :num_games
 
-  @@ign = ""
+  @@all = []
 
-  def initialize(name)
+  def initialize(name, elo, win_rate, num_games)
     @name = name
-    save
+    @elo = elo
+    @win_rate = win_rate
+    @num_games = num_games
+    @@all << self
   end
 
-  def self.name
-    SummonersStats::Scraper.scraper
+  def self.all
+    @@all
   end
 
-  def save
-    @@ign << self
-  end
 
 end

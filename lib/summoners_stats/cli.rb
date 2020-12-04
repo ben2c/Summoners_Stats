@@ -1,3 +1,5 @@
+require 'pry'
+
 class SummonersStats::CLI
   #Bash color to change text color in CLI
   @@muted="\e[1;31m"
@@ -8,7 +10,7 @@ class SummonersStats::CLI
   @@white="\e[0m"
 
   def start
-    puts "This program allows you to search up stats for a LOL account."
+    puts "#{@@blu}This program allows you to search up stats for a LOL account.#{@@white}", ""
     while @input != 'exit'
       puts "#{@@grn}Enter a summoner's name.#{@@white}"
       get_input
@@ -24,7 +26,11 @@ class SummonersStats::CLI
   end
 
   def print_player_data
-    puts SummonersStats::Scraper.scrape(@input)
+    SummonersStats::Scraper.scrape(@input)
+    stats = SummonersStats::Player.all[0]
+    puts stats.elo
+    puts stats.win_rate
+    puts stats.num_games, ""
   end
 
   def get_input
@@ -37,7 +43,7 @@ class SummonersStats::CLI
   end
 
   def exit_prompt
-    puts "Programming is exiting."
+    puts "Programming is exiting.", ""
   end
 
 end
