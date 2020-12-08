@@ -1,3 +1,5 @@
+require 'pry'
+
 class SummonersStats::Player
   attr_accessor :name, :elo, :win_rate, :num_games
 
@@ -15,5 +17,7 @@ class SummonersStats::Player
     @@all
   end
 
-
 end
+
+
+#blog on self

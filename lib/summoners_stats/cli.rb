@@ -10,12 +10,15 @@ class SummonersStats::CLI
   @@white="\e[0m"
 
   def start
+    #The main method of the app that executes and controls the order of the methods
     puts "#{@@blu}This program allows you to search up stats for a LOL account.#{@@white}", ""
+    @i = 0
     while @input != 'exit'
       puts "#{@@grn}Enter a summoner's name.#{@@white}"
       get_input
       display_name
       print_player_data
+      @i+=1
       continue_or_exit
     end
     exit_prompt
@@ -26,8 +29,9 @@ class SummonersStats::CLI
   end
 
   def print_player_data
+    #Grabs data from the Player class and prints with the correct player name
     SummonersStats::Scraper.scrape(@input)
-    stats = SummonersStats::Player.all[0]
+    stats = SummonersStats::Player.all[@i]
     puts stats.elo
     puts stats.win_rate
     puts stats.num_games, ""
@@ -35,6 +39,10 @@ class SummonersStats::CLI
 
   def get_input
     @input = gets.strip.to_s
+  end
+
+  def valid_input
+    @input.length == 0
   end
 
   def continue_or_exit
